@@ -19,6 +19,7 @@
     <description>Demo project for Spring Boot</description>
     <modules>
         <module>currency_exchange_service</module>
+        <module>currency-conversion-service</module>
     </modules>
     <!--    <modules>-->
 <!--        <module>limit-service</module>-->
