@@ -1,11 +1,21 @@
 package com.in28minutes.microservices.currencyexchangeservice.currencyexchangeservice;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.math.BigDecimal;
 
+@Entity
 public class CurrencyExchange {
+    @Id
     private Long id;
+    // from is a SQL syntax word, so we cannot use from directly, so we change the column name
+    @Column(name = "currency_from")
     private String from;
+    @Column(name = "currency_to")
     private String to;
+    // in Java, we use camelcase. However, in database, normally use underscore. Spring data jpa understands that, so tables are created with underscores.
     private BigDecimal conversionMultiple;
     private String environment;
 
