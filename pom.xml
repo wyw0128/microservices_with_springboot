@@ -17,7 +17,10 @@
 
     <name>microservices_with_springboot</name>
     <description>Demo project for Spring Boot</description>
-<!--    <modules>-->
+    <modules>
+        <module>currency_exchange_service</module>
+    </modules>
+    <!--    <modules>-->
 <!--        <module>limit-service</module>-->
 <!--        <module>spring-cloud-config-server</module>-->
 <!--    </modules>-->
