@@ -21,6 +21,7 @@
         <module>currency_exchange_service</module>
         <module>currency-conversion-service</module>
         <module>naming-server</module>
+        <module>api-gateway</module>
     </modules>
     <!--    <modules>-->
 <!--        <module>limit-service</module>-->
