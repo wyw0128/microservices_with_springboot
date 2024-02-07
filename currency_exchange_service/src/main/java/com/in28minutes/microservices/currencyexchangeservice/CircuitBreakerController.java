@@ -1,6 +1,6 @@
 package com.in28minutes.microservices.currencyexchangeservice;
 
-import io.github.resilience4j.retry.annotation.Retry;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,8 @@ public class CircuitBreakerController {
     @GetMapping("/sample-api")
     // what it does is when a request fails, it will retry again, and if it fails three times, it will return error back
     // @Retry(name = "default")
-    @Retry(name = "sample-api", fallbackMethod = "hardcodedResponse")
+    // @Retry(name = "sample-api", fallbackMethod = "hardcodedResponse")
+    @CircuitBreaker(name = "default", fallbackMethod = "hardcodedResponse")
     public String sampleApi() {
         logger.info("Sample Api call received");
         ResponseEntity<String> forEntity = new RestTemplate().getForEntity("http://localhost:8080/some-dummy-url", String.class);
