@@ -12,7 +12,9 @@ public class ApiGatewayConfiguration {
         return builder.routes()
                 // creating a simple route function, if a request comes to /get, then we will redirect to this uri:
                 // http://httpbin.org:80
-                .route(p -> p.path("/get")
+                .route(p -> p
+                        // you can match by any request attribute, such as request header, method, and query....
+                        .path("/get")
                         .filters(f -> f
                                 .addRequestHeader("MyHeader", "MyURI")
                                 .addRequestParameter("Param", "MyValue"))
